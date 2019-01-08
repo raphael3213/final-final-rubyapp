@@ -3,6 +3,8 @@ class StaticPageController < ApplicationController
   	if logged_in?
   	@blog = current_user.blogs.build if logged_in?
   	@feed_items = current_user.feed.paginate(page: params[:page])
+    @comments=Comment.new
+    @display_comments=@blog.comments
   end
   end
 

@@ -34,6 +34,11 @@ module SessionHelper
 	cookies.permanent.signed[:user_id]=user.id
 	cookies.permanent[:token_digest]=user.remember_token
 	end
+
+	def find_user(id1)
+		@ret_user=User.find_by(id: id1)
+		
+	end
 	
 	def forget(user)
   user.forget

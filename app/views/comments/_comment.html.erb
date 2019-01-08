@@ -1,0 +1,10 @@
+
+
+
+<%ret=find_user(comment.user_id)%>
+<br>
+<%if ret.image %>
+	<%= image_tag(ret.image.url,size: "40x40")%>
+	<% end %>
+<span class="user"><%= link_to ret.name, ret %></span>
+<h3><%=comment.body%></h3>

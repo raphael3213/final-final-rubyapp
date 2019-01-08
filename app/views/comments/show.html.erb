@@ -1,0 +1,11 @@
+<% if @user.blogs.any? %>
+	<h3>Blog</h3>
+		<ol class="blogs">
+		<%= render @blog %>
+		</ol>
+		<section class="blog_form">
+			
+			<%= render 'shared/comment_form' %>
+		</section>
+	
+	<% end %>

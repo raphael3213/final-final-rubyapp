@@ -15,5 +15,12 @@ data: { confirm: "You sure?" } %>
 <%= link_to "edit", edit_blog_path(blog),method:"get",
 data: { confirm: "You sure?" } %>
 <% end %>
+<%if blog.comments.any? %>
+<%@display_comments=blog.comments%>
+<%= render partial:'comments/comment' ,collection:@display_comments%>
+<%end%> 
+<% if logged_in? %>
+<%=link_to "Add comment.." ,comment_path(blog.id)%>
+<%end%>
 </span>
 </li>

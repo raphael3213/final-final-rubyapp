@@ -1,0 +1,10 @@
+<%= form_for @comments ,url: {action: "create", params: {id: @blog.id}} do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
+<div class="field">
+
+<%= f.text_area :body, placeholder: "Enter Your Comment...." %>
+</div>
+<%=params[:wut]=@blog.id%>
+<%=params%>
+<%= f.submit "Post", class: "btn btn-primary" %>
+<% end %>
