@@ -10,17 +10,20 @@
 <span class="timestamp">
 Posted on <%=blog.created_at %> .
 <% if current_user==blog.user %>
-<%= link_to "delete", blog, method: :delete,
+<%= link_to "delete", blog_path(blog), method: :delete,
 data: { confirm: "You sure?" } %>
 <%= link_to "edit", edit_blog_path(blog),method:"get",
 data: { confirm: "You sure?" } %>
 <% end %>
-<%if blog.comments.any? %>
-<%@display_comments=blog.comments%>
-<%= render partial:'comments/comment' ,collection:@display_comments%>
-<%end%> 
 <% if logged_in? %>
 <%=link_to "Add comment.." ,comment_path(blog.id)%>
 <%end%>
+<div id="comm">
+	<%if blog.comments.any? %>
+	<%@display_comments=blog.comments%>
+	<%= render partial:'comments/comment' ,collection:@display_comments%>
+	<%end%> 
+</div>
+
 </span>
 </li>

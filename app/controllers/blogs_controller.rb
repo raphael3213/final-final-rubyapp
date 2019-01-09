@@ -23,7 +23,7 @@ before_action :logged_in_user, only: [:create, :destroy]
 	def destroy
 		@blog.destroy
 	flash[:success] = "Blog deleted"
-redirect_to request.referrer || root_url
+redirect_to root_url
 	end
 
 
