@@ -5,7 +5,15 @@ class StaticPageController < ApplicationController
   	@feed_items = current_user.feed.paginate(page: params[:page])
     @comments=Comment.new
     @display_comments=@blog.comments
+
+    
   end
+
+  respond_to do |format|
+    format.html {}
+    format.js {}
+  end
+  
   end
 
   def help
