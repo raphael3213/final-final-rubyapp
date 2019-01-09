@@ -31,11 +31,11 @@ def update
 		@user=current_user
 		@blog=@user.blogs.find_by(id:params[:id])
 		if @blog.update_attributes(blogs_params)
-			flash[:success] = "Blog updated"
+			flash.now[:success] = "Blog updated"
 redirect_to root_url
 
 		else
-			flash[:danger] = "Updating failed"
+			flash.now[:danger] = "Updating failed"
 			redirect_to root_url
 		end
 	end
