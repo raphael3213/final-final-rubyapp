@@ -37,6 +37,33 @@ before_action :logged_in_user
 		end
 	end
 
+	def edit
+		@comments=Comment.find(params[:id])
+		@blog=@comments.blog
+		@user=@comments.user
+		@display_comments=@blog.comments
+		# render json:@display_comments and return
+		@comm11=@display_comments
+		respond_to do |format|
+					format.html {  }
+					format.js   { }
+					end
+	end
+
+	def update
+		
+		@comm=Comment.find_by(id:params[:id])
+
+		if @comm.update_attributes(comment_params)
+
+			redirect_to request.referrer
+			#redirect_to root_url	
+		else
+			flash[:danger]="edit comment failure"
+			#redirect_to root_url
+		end
+
+	end
 
 	private
 

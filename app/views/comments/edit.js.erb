@@ -1,0 +1,3 @@
+
+$("#comment-<%=@comments.id%>").html("<%= escape_javascript( render :partial => 'shared/comment_edit_form', object:@comments  )%>")
+

@@ -15,7 +15,7 @@
 <div class="col-md-8">
 	<% if @user.blogs.any? %>
 	<h3>Blogs (<%= @user.blogs.count %>)</h3>
-		<ol class="blogs">
+		<ol class="blogs" id="profile_blogs">
 		<%= render @blogs %>
 		</ol>
 	

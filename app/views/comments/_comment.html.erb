@@ -1,5 +1,6 @@
 
 
+<div id="comment-<%=comment.id%>">
 
 <%ret=find_user(comment.user_id)%>
 <br>
@@ -8,3 +9,11 @@
 	<% end %>
 <span class="user"><%= link_to ret.name, ret %></span>
 <h3><%=comment.body%></h3>
+
+<%if current_user.id==comment.user_id%>
+<%=link_to "edit comment...",edit_comment_path(comment), remote:true ,class:"editor", id:comment.id %>
+<%end%>
+
+</div>
+
+

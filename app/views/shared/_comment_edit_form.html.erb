@@ -1,0 +1,9 @@
+<%= form_for @comments ,remote:true do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
+<div class="field">
+
+<%= f.text_area :body, placeholder: "Enter Your Comment...." %>
+</div>
+
+<%= f.submit "Post", class: "btn btn-primary" %>
+<% end %>
