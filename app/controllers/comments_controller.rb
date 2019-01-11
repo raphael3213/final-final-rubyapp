@@ -57,10 +57,11 @@ before_action :logged_in_user
 		if @comm.update_attributes(comment_params)
 
 			redirect_to request.referrer
+			
 			#redirect_to root_url	
 		else
 			flash[:danger]="edit comment failure"
-			#redirect_to root_url
+			redirect_to root_url
 		end
 
 	end

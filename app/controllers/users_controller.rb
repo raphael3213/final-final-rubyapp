@@ -10,6 +10,10 @@ before_action :correct_user, only: [:edit,:update]
 	@user=User.find(params[:id])
 	@blogs = @user.blogs
   
+  respond_to  do |format|
+    format.html { }
+    format.js { }
+  end
     
 	end 
  
