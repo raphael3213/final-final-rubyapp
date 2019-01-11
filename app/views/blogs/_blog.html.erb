@@ -16,6 +16,12 @@ data: { confirm: "You sure?" } %>
 data: { confirm: "You sure?" } %>
 <% end %>
 <% if logged_in? %>
+<% if !already_liked?(current_user.id,blog.id)%>
+<%=link_to "Like" ,likes_path(blog_id: blog.id,user_id: current_user.id),:method => :post,remote:true%>
+<%else%>
+<% @liker=blog.likes.find_by(user_id:current_user.id )%>
+<%=link_to "Unlike" ,like_path(@liker.id),:method => :get,controller:"like",action:"show",remote:true %>
+<%end%>
 <%=link_to "Add comment.." ,comment_path(blog.id)%>
 <%end%>
 <div id="comm">

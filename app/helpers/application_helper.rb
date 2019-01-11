@@ -10,4 +10,9 @@ else
 "#{page_title} | #{base_title}"
 end
 end
+
+
+def already_liked?(u,b)
+    Like.where(user_id:u,blog_id:b).exists?
+  end
 end
