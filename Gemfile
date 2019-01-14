@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails',                   '4.2.8'
 gem 'bcrypt',                  '3.1.7'
+gem 'client_side_validations'
 gem 'faker',                   '1.4.2'
 gem 'carrierwave',             '0.10.0'
 gem 'mini_magick',             '3.8.0'

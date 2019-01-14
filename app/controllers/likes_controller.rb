@@ -22,20 +22,16 @@ class LikesController < ApplicationController
 
 	def destroy
 
-		
-
 	end
 
-
 	def show
-
 		@reliker=Like.find(params[:id])
 		@user_id=current_user.id
 		@blog_id=@reliker.blog_id
 		#params[:blog_id]
 		#debugger
 		if already_liked?(@user_id,@blog_id)
-			
+		
 			@unlike=Like.where(user_id:@user_id,blog_id:@blog_id)
 
 			if 	@unlike.destroy(@unlike.ids[0])

@@ -22,6 +22,7 @@ data: { confirm: "You sure?" } %>
 <% @liker=blog.likes.find_by(user_id:current_user.id )%>
 <%=link_to "Unlike" ,like_path(@liker.id),:method => :get,controller:"like",action:"show",remote:true %>
 <%end%>
+<%="#{like_no(blog.id)} likes"%>
 <%=link_to "Add comment.." ,comment_path(blog.id)%>
 <%end%>
 <div id="comm">

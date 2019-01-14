@@ -15,4 +15,8 @@ end
 def already_liked?(u,b)
     Like.where(user_id:u,blog_id:b).exists?
   end
+
+  def like_no(bl)
+  	Like.where(blog_id:bl).length
+  end
 end
