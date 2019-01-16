@@ -1,0 +1,11 @@
+<h2>Import Products</h2>
+
+<%= form_tag inventories_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+
+  <%if !session[:error].nil?%>
+  	<%=session[:error]%>
+  	<%session.delete(:error)%>
+  <%end%>
+<% end %>

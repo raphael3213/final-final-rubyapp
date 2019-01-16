@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  item_type: MyString
+  sku: MyString
+  Title: MyString
+  serial_number: MyString
+  quantity: 1
+  price: 1
+  organization: MyString
+  Length: 1
+  Breadth: 1
+  Height: 1
+  Weight: 1
+  description: MyText
+  short_description: MyText
+  asset_code: MyString
+  grade: MyString
+  category: MyString
+  brand: MyString
+
+two:
+  item_type: MyString
+  sku: MyString
+  Title: MyString
+  serial_number: MyString
+  quantity: 1
+  price: 1
+  organization: MyString
+  Length: 1
+  Breadth: 1
+  Height: 1
+  Weight: 1
+  description: MyText
+  short_description: MyText
+  asset_code: MyString
+  grade: MyString
+  category: MyString
+  brand: MyString

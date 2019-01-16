@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190111105912) do
+ActiveRecord::Schema.define(version: 20190116095239) do
 
   create_table "blogs", force: :cascade do |t|
     t.string   "title"
@@ -34,6 +34,29 @@ ActiveRecord::Schema.define(version: 20190111105912) do
 
   add_index "comments", ["blog_id"], name: "index_comments_on_blog_id"
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"
+
+  create_table "inventories", force: :cascade do |t|
+    t.string   "item_type"
+    t.string   "sku"
+    t.string   "Title"
+    t.string   "serial_number"
+    t.integer  "quantity"
+    t.integer  "price"
+    t.string   "organization"
+    t.integer  "Length"
+    t.integer  "Breadth"
+    t.integer  "Height"
+    t.integer  "Weight"
+    t.text     "description"
+    t.text     "short_description"
+    t.string   "asset_code"
+    t.string   "grade"
+    t.string   "category"
+    t.string   "brand"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.integer  "Volume"
+  end
 
   create_table "likes", force: :cascade do |t|
     t.integer  "user_id"

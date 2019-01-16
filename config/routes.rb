@@ -24,5 +24,7 @@ Rails.application.routes.draw do
   resources:comments
 
   resources:likes
+
+  resources:inventories
  
 end
