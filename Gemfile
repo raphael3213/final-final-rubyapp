@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails',                   '4.2.8'
 gem 'bcrypt',                  '3.1.7'
 gem 'client_side_validations'
+gem 'aws-sdk',                 '< 2.0'
 gem 'faker',                   '1.4.2'
 gem 'carrierwave',             '0.10.0'
 gem 'mini_magick',             '3.8.0'
@@ -25,6 +26,9 @@ group :development, :test do
   gem 'web-console', '2.0.0.beta3'
   gem 'spring',      '1.1.3'
   gem 'binding_of_caller','0.7.3.pre1'
+  gem 'figaro'
+  gem 'aws-sdk',                 '< 2.0'
+  gem 'aws-sdk-s3', '~> 1.0.0.rc2'
 end
 
 group :test do
